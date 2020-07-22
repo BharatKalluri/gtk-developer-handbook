@@ -11,13 +11,13 @@ description: Let's get started!
 * Install [Flatpak](https://www.flatpak.org/) \(Flatpak is a package/application manager\) , instructions to install flatpak on your distribution can be found [here](https://flatpak.org/setup/)
 * Setup [flathub](https://flathub.org/) by issuing this command in the terminal
 
-  ```text
-  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-  ```
+```text
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
 
 * A restart is recommended at this point. Later issue this command in the terminal to install GNOME Builder. GNOME Builder is a [Integrated development environment \(IDE\)](https://en.wikipedia.org/wiki/Integrated_development_environment) made using GNOME technologies.
 
-```bash
+```text
 flatpak install flathub org.gnome.Builder
 ```
 
@@ -43,7 +43,7 @@ Select the language as Python and the we will leave the default license selectio
 
 ![Starting a new project ](../.gitbook/assets/image%20%282%29.png)
 
-Looks good. Click on `Create Project` to create the project in your `Projects` folder.
+Looks good. Click on `Create Project` to create the project in your `Projects` folder!
 
 
 
