@@ -38,7 +38,7 @@ This is the basic premise of templates in python.
 
 ### Customizing the UI layout
 
-Now that we understand the basics. Let us go back to the designer view for `window.ui` and 
+Now that we understand the basics, we won't be needing any layouts since the UI for the application is very simple. Let us go back to the designer view for `window.ui` and 
 
 * Remove the `Gtk.Label` and replace the label widget with `Gtk.Image`. Set the ID of the component to `wallpaper_container`.
 * Click on the headerbar and change the text from "Hello World" to "Splash". Make sure the ID of header bar is set to `header_bar` 
