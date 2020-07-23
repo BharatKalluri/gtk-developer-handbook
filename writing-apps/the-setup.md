@@ -45,9 +45,5 @@ Select the language as Python and the we will leave the default license selectio
 
 Looks good. Click on `Create Project` to create the project in your `Projects` folder!
 
-### Understanding what are the files created
-
-![Files in the src directory](../.gitbook/assets/image%20%283%29.png)
-
 
 
