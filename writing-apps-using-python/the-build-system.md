@@ -4,7 +4,7 @@ description: Understanding what GNOME builder does to run your application
 
 # The Build System
 
-By default, GNOME builder created a project using the [meson build system](https://mesonbuild.com/). 
+GNOME builder created a project using the [meson build system](https://mesonbuild.com/). 
 
 Meson has a concept of using files which end with `.build` as the build configuration for that directory. Let us go through the default build configuration.
 
@@ -79,9 +79,9 @@ if compile_schemas.found()
 endif
 ```
 
-#### Desktop file
+#### Desktop file \(Line 1-8\)
 
-Line 1-8: i18n is responsible for internationalization. It takes `com.yourusername.splash.desktop.in` file as input and outputs the desktop file and installs it. Desktop files are resposible for the content you see on your launcher's and task bar's. Let us see what it contains. Open `data/com.yourusername.splash.desktop.in` 
+i18n is responsible for internationalization. It takes `com.yourusername.splash.desktop.in` file as input and outputs the desktop file and installs it. Desktop files are resposible for the content you see on your launcher's and task bar's. Let us see what it contains. Open `/com.yourusername.splash.desktop.in` 
 
 ```text
 [Desktop Entry]
@@ -95,7 +95,7 @@ StartupNotify=true
 
 The desktop file currently contains the Name, Exec\(Executable to run\), Terminal\(Is it a terminal appplication?\), Type, Categories and StartupNotify. This file decides what text should be shown in the launcher etc.. You can read more about the spec [here](https://developer.gnome.org/desktop-entry-spec/). This file will be finally installed at `/usr/share/applications`.
 
-the get\_option function gets the appropriate folder path's for the input. Some common outputs for get option are as follows
+the `get_option` function gets the appropriate folder path's for the input. Some common outputs for get option are as follows
 
 ```text
 get_option('prefix') -> /usr
@@ -104,6 +104,20 @@ get_option('datadir') -> /usr/share
 ```
 
 > One concept prevalent here is the idea of `.in` files which are the input to a function. Which in turn generates files without the `.in` suffix and installs in a particular directory
+
+#### Desktop file Validation \(Line 10-15\)
+
+There is a program called `desktop-file-validate` which checks for errors in desktop files. Line 10 is trying to find the application. If it exists, then we use it to validate the generated desktop file and make sure there are no errors
+
+#### AppStream \(Line 17-23\)
+
+Appstream is a freedesktop specification which specifies metadata for applications. This is distro agnostic and a commonly agreed upon [spec](https://www.freedesktop.org/software/appstream/docs/). The appstream file is what is used to display information about the application in software centers. 
+
+Appstream is stored in `.xml` format. The procedure is same as the desktop file. We take in the `.in`file and output the translated versions using i18n.
+
+#### AppStream data validation \(Line 25-30\)
+
+Again, a very similar piece of code to the desktop file validator. If the executable is found, meson runs the executable with the appstream file to make sure there are no errors.
 
 
 
