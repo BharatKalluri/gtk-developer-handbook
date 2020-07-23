@@ -6,4 +6,5 @@
 
 * [The Setup](writing-apps-using-python/the-setup.md)
 * [The Build System](writing-apps-using-python/the-build-system.md)
+* [Understanding Widgets, Layouts & Templates](writing-apps-using-python/understanding-widgets-layouts-and-templates.md)
 
