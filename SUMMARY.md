@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 
-## Writing Apps
+## Writing Apps using Python
 
-* [The Setup](writing-apps/the-setup.md)
+* [The Setup](writing-apps-using-python/the-setup.md)
 
