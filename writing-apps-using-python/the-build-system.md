@@ -33,7 +33,9 @@ meson.add_install_script('build-aux/meson/postinstall.py')
 * Line 11, 12, 13 : Adding sub directories `data` , `src`,`po`, this in turn triggers meson build inside those directories
 * Line 15: Runs a python script at the end of the build
 
-Let us now open the `meson.build` file inside `build` directory, these are the contents of the file
+### Meson configuration in `data` folder
+
+Let us now open the `meson.build` file inside `data` directory, these are the contents of the file
 
 ```text
 desktop_file = i18n.merge_file(
@@ -129,5 +131,81 @@ This file is installed in `/usr/share/glib-2.0/schemas`
 
 Similar to above validations. `glib-compile-schemas` compiles the `.gschema.xml` to make sure there are no errors.
 
+We have covered what is in the `data/meson.build`. 
 
+### Meson configuration in `po` directory
+
+This directory contains the build file for the translations, we will look into it later.
+
+### Meson configuration in `src` directory
+
+Here are the contents of this file
+
+```text
+pkgdatadir = join_paths(get_option('prefix'), get_option('datadir'), meson.project_name())
+moduledir = join_paths(pkgdatadir, 'splash')
+gnome = import('gnome')
+
+gnome.compile_resources('splash',
+  'splash.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
+)
+
+python = import('python')
+
+conf = configuration_data()
+conf.set('PYTHON', python.find_installation('python3').path())
+conf.set('VERSION', meson.project_version())
+conf.set('localedir', join_paths(get_option('prefix'), get_option('localedir')))
+conf.set('pkgdatadir', pkgdatadir)
+
+configure_file(
+  input: 'splash.in',
+  output: 'splash',
+  configuration: conf,
+  install: true,
+  install_dir: get_option('bindir')
+)
+
+splash_sources = [
+  '__init__.py',
+  'main.py',
+  'window.py',
+]
+
+install_data(splash_sources, install_dir: moduledir)
+```
+
+Line1-3 : Imports and declaring some constants
+
+#### GResource File \(Line 5-10\)
+
+A Gresource file is responsible for listing out the resources required for your GTK Application. The file currently contains a pointer to one file as of now. 
+
+```text
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/yourusername/splash">
+    <file>window.ui</file>
+  </gresource>
+</gresources>
+```
+
+Two important things to note, this file specifies a prefix under which files are stored and a list of files which will be stored.
+
+#### Creating the executable \(Line 14-26\)
+
+The python file `splash.py.in` is given as an input to a function which meson will process and return back a processed `splash` file which will be installed as an executable file in the bin directory. 
+
+#### Storing the other source files \(Line 28-34\)
+
+All the other python files which are used by the application are listed out in an array and then installed to the module directory.
+
+
+
+That's it. Congratulations! With this knowledge it will be easier to understand how an application works. 
+
+Next up, let us look into widgets!
 
