@@ -45,5 +45,17 @@ Select the language as Python and the we will leave the default license selectio
 
 Looks good. Click on `Create Project` to create the project in your `Projects` folder!
 
+Open the project, you will be welcomed with a screen like this
 
+![GNOME Builder welcome screen](../.gitbook/assets/image%20%284%29.png)
+
+Click on the first top left editor icon and click on `Build Preferences` 
+
+![Select Build configuration screen](../.gitbook/assets/image%20%286%29.png)
+
+Select the `Default` build configuration and click on `Make Active`. Now click on the Play \(▶️\) button to start running the application. There should be a new window which pops up saying Hello World!
+
+![Hello World!](../.gitbook/assets/image%20%287%29.png)
+
+Congratulations! Next up let us understand what are the files which were auto generated and how an application is actually built.
 
