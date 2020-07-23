@@ -83,7 +83,7 @@ endif
 
 #### Desktop file \(Line 1-8\)
 
-i18n is responsible for internationalization. It takes `com.yourusername.splash.desktop.in` file as input and outputs the desktop file and installs it. Desktop files are resposible for the content you see on your launcher's and task bar's. Let us see what it contains. Open `/com.yourusername.splash.desktop.in` 
+i18n is responsible for internationalization. It takes `com.yourusername.splash.desktop.in` file as input and outputs the desktop file and installs it. Desktop files are responsible for the content you see on your launcher and task bar. Let us see what it contains. Open `com.yourusername.splash.desktop.in` 
 
 ```text
 [Desktop Entry]
