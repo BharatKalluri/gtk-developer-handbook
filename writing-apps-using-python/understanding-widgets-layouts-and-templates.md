@@ -49,19 +49,25 @@ Now that we understand the basics, we won't be needing any layouts since the UI 
 
 Let us add a menu button, later we can add a pop over menu which will contain an `about` button. On click will show the about dialog.
 
-Let's get back to editing window.ui . Click on the header bar and in the properties sidebar, increment Number of items from 1 to 2. You will see a new blank space pop up.
+Let's get back to editing `window.ui` . Click on the header bar and in the properties sidebar, increment `Number of items` from 1 to 2. You will see a new blank space pop up.
 
-![Blank space for Menu Popover](../.gitbook/assets/image%20%2814%29.png)
+![Creating space for the menu button](../.gitbook/assets/image%20%2818%29.png)
 
-Double click on empty space and add a Gtk.Button. Go to the properties sidebar of the Gtk.Button and set the ID of the button to menu\_button. Under the sub heading Button Content, Check on Add custom content.
+Double click on empty space and add a `Gtk.Button`. Go to the properties sidebar of the `Gtk.Button` and set the ID of the button to `menu_button`. Under the sub heading Button Content, Check on `Add custom content`.
 
-![Blank area for Menu icon](../.gitbook/assets/image%20%2812%29.png)
+Double click and add `Gtk.Image`. In the properties sidebar, Set the ID to `open_menu_icon` and Icon name to `open-menu-symbolic`. 
 
-Double click and add Gtk.Image. In the properties sidebar, Set the ID to open\_menu\_icon and Icon name to open-menu-symbolic. 
+![Setting the menu icon on the button](../.gitbook/assets/image%20%2820%29.png)
 
-![Setting the menu icon on the button](../.gitbook/assets/image%20%2816%29.png)
+Let us move the menu button to the other end. Having two buttons on the same side of the header bar is not good design. Click on the Menu button and go to the second tab in the properties sidebar \(named `child container properties`\). There is an option called `Pack Type`. This decides which side the widgets align. Change the `Pack Type` to `End`. You can see that the menu moved to the right end of the header bar.
 
-Let us move the menu button to the other end. Having two buttons on the same side of the header bar is not good design. Click on the Menu button and go to the second tab in the properties sidebar \(named child container properties\). There is an option called Pack Type. This decides which side the widgets align. Change the Pack Type to End. You can see that the menu moved to the right end of the header bar.
+![Packing the button to the end](../.gitbook/assets/image%20%2819%29.png)
 
-![](../.gitbook/assets/image%20%2817%29.png)
+Let us add a loading spinner as well. So that whenever we are loading an wallpaper from the internet, we can use the spinner to indicate work being done on the background. Go back to the header bar and increment the Number of items to 3. Now again, double click on the empty space and add a Gtk.Spinner. On the properties side bar, set the ID to loading\_spinner.
+
+![Adding the spinner](../.gitbook/assets/image%20%2817%29.png)
+
+Looks good! Let us jump back to code and make use of this template as a base and build on top of it.
+
+> Do not forget to save and commit these changes to your git repository!
 
