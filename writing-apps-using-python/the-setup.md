@@ -7,7 +7,7 @@ description: Let's get started!
 ### Some Prerequisites
 
 * Install `git`
-* Sign up on a git hosting provider \(Examples are Github, Gitlab etc..\)
+* Sign up on a git hosting provider \([Github](https://github.com/)/[GitLab](https://gitlab.com/)/[GNOME's GitLab instance](https://gitlab.gnome.org/)\)
 * Install [Flatpak](https://www.flatpak.org/) \(Flatpak is a package/application manager\) , instructions to install flatpak on your distribution can be found [here](https://flatpak.org/setup/)
 * Setup [flathub](https://flathub.org/) by issuing this command in the terminal
 
