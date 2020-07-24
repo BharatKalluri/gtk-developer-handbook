@@ -47,5 +47,19 @@ Now that we understand the basics, we won't be needing any layouts since the UI 
 
 ![The modified version of the template](../.gitbook/assets/image%20%2810%29.png)
 
-Great! The UI looks ready for us to start working on functionality!
+Let us add a menu button, later we can add a pop over menu which will contain an `about` button. On click will show the about dialog.
+
+Let's get back to editing window.ui . Click on the header bar and in the properties sidebar, increment Number of items from 1 to 2. You will see a new blank space pop up.
+
+![Blank space for Menu Popover](../.gitbook/assets/image%20%2814%29.png)
+
+Double click on empty space and add a Gtk.Button. Go to the properties sidebar of the Gtk.Button and set the ID of the button to menu\_button. Under the sub heading Button Content, Check on Add custom content.
+
+![Blank area for Menu icon](../.gitbook/assets/image%20%2812%29.png)
+
+Double click and add Gtk.Image. In the properties sidebar, Set the ID to open\_menu\_icon and Icon name to open-menu-symbolic. 
+
+![Setting the menu icon on the button](../.gitbook/assets/image%20%2816%29.png)
+
+Let us move the menu button to the other end. Having two buttons on the same side of the header bar is not good design. Click on the Menu button and go to the second tab in the properties sidebar \(named child container properties\). There is an option called Pack Type. This decides which side the widgets align. Think of the header bar as a Gtk.Box  
 
