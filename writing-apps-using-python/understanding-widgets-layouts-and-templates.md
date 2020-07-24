@@ -61,5 +61,7 @@ Double click and add Gtk.Image. In the properties sidebar, Set the ID to open\_m
 
 ![Setting the menu icon on the button](../.gitbook/assets/image%20%2816%29.png)
 
-Let us move the menu button to the other end. Having two buttons on the same side of the header bar is not good design. Click on the Menu button and go to the second tab in the properties sidebar \(named child container properties\). There is an option called Pack Type. This decides which side the widgets align. Think of the header bar as a Gtk.Box  
+Let us move the menu button to the other end. Having two buttons on the same side of the header bar is not good design. Click on the Menu button and go to the second tab in the properties sidebar \(named child container properties\). There is an option called Pack Type. This decides which side the widgets align. Change the Pack Type to End. You can see that the menu moved to the right end of the header bar.
+
+![](../.gitbook/assets/image%20%2817%29.png)
 
