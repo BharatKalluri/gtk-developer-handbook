@@ -43,7 +43,7 @@ The first step is to go to the API documentation for the pyobject libraries, [he
 
 #### Wallpaper service
 
-With the new found knowledge, let us write a wallpaper\_service which first downloads a file from a URL to a pre defined file path. And then another function which modifies the GSettings for the desktop background to change the wallpaper. 
+With the new found knowledge, let us write a `wallpaper_service` which first downloads a file from a URL to a pre defined file path. And then another function which modifies the GSettings for the desktop background to change the wallpaper. 
 
 Create a folder called `services`and create a file called `wallpaper_service.py` inside `services`.
 
@@ -78,9 +78,9 @@ class WallPaperService:
 
 ```
 
-Let us walk through the code, the class has a class variable called splash\_wallpaper\_file\_path which is a constant path at which we will be saving the wallpaper. Another class variable called background\_settings which holds GSettings for the schema which we got from exploring DConf \(org.gnome.desktop.background\).
+Let us walk through the code, the class has a class variable called `splash_wallpaper_file_path` which is a constant path at which we will be saving the wallpaper. Another class variable called `background_settings` which holds GSettings for the schema which we got from exploring DConf \(`org.gnome.desktop.background`\).
 
-The set\_wallpaper\_from\_file\_uri just takes in a URI and set's the GSetting accordingly. set\_wallpaper\_from\_file\_uri downloads an image from the URL and saves in a given path. The final function set\_wallpaper\_from\_url combines both these functions, it takes in a image\_url, downloads the file and places it in the desired file path and then changes the GSetting. Great!
+The `set_wallpaper_from_file_uri` just takes in a URI and set's the GSetting accordingly. `set_wallpaper_from_file_uri` downloads an image from the URL and saves in a given path. The final function `set_wallpaper_from_url` combines both these functions, it takes in a `image_url`, downloads the file and places it in the desired file path and then changes the GSetting. Great!
 
 #### UnSplash Service
 
@@ -115,7 +115,7 @@ This is a fairly straight forward class. It stores the access key as a class var
 pip install --user requests
 ```
 
-Aweosome! Let us now use these classes in our code so that clicking shuffle changes the wallpaper.
+Awesome! Let us now use these classes in our code so that clicking shuffle changes the wallpaper.
 
 
 
