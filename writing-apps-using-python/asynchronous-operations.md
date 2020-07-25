@@ -10,7 +10,7 @@ We will be using the `threading` library to achieve this. Go through [this](http
 
 A thread can be instantiated by using the `threading.Thread(fn, args)` method.This method will return a thread which will start running once we call the `.start()` method on it. You can also pickup a thread by using the `.join()` function.
 
-A daemon is a process running in the background in CS terms. The threading.Thread function takes in a parameter called daemon which is a boolean. If it is true, then the thread will be pushed to the background. Now let us use this knowledge to make our shuffle function async.
+A daemon is a process running in the background in CS terms. The `threading.Thread` function takes in a parameter called `daemon` which is a boolean. If it is true, then the thread will be pushed to the background. Now let us use this knowledge to make our shuffle function async.
 
 ```python
 import threading
