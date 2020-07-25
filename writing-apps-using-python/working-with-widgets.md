@@ -31,6 +31,8 @@ Now, jump to `set_from_pixbuf` and click on PixBuf. You will be redirected [here
 
 > This is a process which you will find yourself doing repeatedly, currently the state of autocomplete is not very good\(although work is underway trying to make it better\). So to understand what methods exist for a Gtk/Gio/Glib class. You should jump to the API docs and explore.
 
+Let us also get the shuffle button to shuffle image on click. Jump back into the documentation and look at the Gtk.Button docs. Switch to the [signals section](https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/Button.html#signals) and you can find a bunch of signals listed there. The one we need now is the clicked signal. Click on the clicked signal and [read the docs](https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/Button.html#Gtk.Button.signals.clicked). It takes in an argument of Gtk.Button.  
+
 ```python
 # Contents of window.py
 from gi.repository import Gtk, GdkPixbuf
@@ -59,14 +61,20 @@ class SplashWindow(Gtk.ApplicationWindow):
             preserve_aspect_ratio=True,
         )
         self.wallpaper_container.set_from_pixbuf(pixbuf)
-
+        
+    def shuffle_button_on_clicked(self, button: Gtk.Button):
+        self.shuffle_image()
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.shuffle_image()
+        self.shuffle_button.connect("clicked", self.shuffle_button_on_clicked)
+        
 ```
 
 Let us recap on what we did here. We created a `shuffle_image` function which get's a `random_wallpaper_url`, set's the `wallpaper_from_url` \(which inturn also saves to disk and sets the Gsetting\) and later created a pixbuf from the file and set it to our `wallpaper_container`.
+
+We also created a `shuffle_button_on_clicked` function which just calls back `shuffle_image` and connected the signal clicked from the button to trigger shuffle.
 
 And we are calling the `shuffle_image`  function in the `__init__` method so that we get a random image on application load.
 

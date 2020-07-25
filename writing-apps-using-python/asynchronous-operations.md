@@ -12,5 +12,7 @@ A thread can be instantiated by using the `threading.Thread(fn, args)` method.Th
 
 A daemon is a process running in the background in CS terms. The threading.Thread function takes in a parameter called daemon which is a boolean. If it is true, then the thread will be pushed to the background. Now let us use this knowledge to make our shuffle function async.
 
+Let us add a simple function called async\_shuffle\_image, which starts a daemon thread and calls the function
+
 
 
