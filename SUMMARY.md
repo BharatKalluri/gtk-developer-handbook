@@ -10,4 +10,5 @@
 * [Working with GIO: GSettings](writing-apps-using-python/working-with-gio-gsettings.md)
 * [Working with Widgets](writing-apps-using-python/working-with-widgets.md)
 * [Asynchronous operations](writing-apps-using-python/asynchronous-operations.md)
+* [Working with GIO: GActions](writing-apps-using-python/working-with-gio-gactions.md)
 

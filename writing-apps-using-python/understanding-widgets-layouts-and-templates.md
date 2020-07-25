@@ -53,7 +53,7 @@ Let's get back to editing `window.ui` . Click on the header bar and in the prope
 
 ![Creating space for the menu button](../.gitbook/assets/image%20%2818%29.png)
 
-Double click on empty space and add a `Gtk.Button`. Go to the properties sidebar of the `Gtk.Button` and set the ID of the button to `menu_button`. Under the sub heading Button Content, Check on `Add custom content`.
+Double click on empty space and add a `Gtk.MenuButton`. Go to the properties sidebar of the `Gtk.MenuButton` and set the ID of the button to `menu_button`. 
 
 Double click and add `Gtk.Image`. In the properties sidebar, Set the ID to `open_menu_icon` and Icon name to `open-menu-symbolic`. 
 
