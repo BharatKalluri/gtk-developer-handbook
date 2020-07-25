@@ -67,7 +67,9 @@ Let us walk through the code and note the changes which were done.
 
 Great! Now on startup, the application looks like this
 
-![Loading screen](../.gitbook/assets/image%20%2824%29.png)
+![Loading screen](../.gitbook/assets/image%20%2825%29.png)
+
+![On Image Load](../.gitbook/assets/image%20%2824%29.png)
 
 Also when we click on the `shuffle_button` the UI no longer freezes. Awesome!
 

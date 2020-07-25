@@ -101,7 +101,10 @@ class UnSplashService:
         print("Getting a random photo from UnSplash!")
         unsplash_response = requests.get(
             f"https://api.unsplash.com/photos/random",
-            params={"client_id": self.access_key}
+            params={
+                "client_id": self.access_key,
+                "orientation": "landscape"
+            }
         )
         response_json = unsplash_response.json()
         raw_url = response_json['urls']['raw']
