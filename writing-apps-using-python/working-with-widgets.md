@@ -117,5 +117,5 @@ install_data(splash_sources, install_dir: moduledir)
 
 We used install\_subdir function to install the services directory to module directory in line 35. Now run the application and it will run fine. After a while, you will see that the window loads with the image. And the same image will be in your Pictures folder and also be set as your desktop wallpaper!
 
-But if you notice, the application has a huge startup time. That is because we are blocking on the main thread. The init method blocks on shuffle\_image , loads the image and then let's the window rendering resume. This is bad user experience. Ideally we should load the image in the background and show a loading spinner until the image is loaded. Let us see how we can run background tasks using python next!
+But if you notice, the application has a huge startup time. That is because we are blocking on the main thread. The `__init__` method blocks on `shuffle_image` , loads the image and then let's the window rendering resume. This is bad user experience. Ideally we should load the image in the background and show a loading spinner until the image is loaded. Let us see how we can run background tasks using python next!
 
