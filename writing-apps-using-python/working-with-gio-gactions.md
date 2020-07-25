@@ -91,11 +91,11 @@ def main(version):
     return app.run(sys.argv)
 ```
 
-Let's walk through the code which got added. from line 17-22. We are defining an array of actions we want to define. It will have a name, a function to execute and a optional accel. and later from line 24-36, we just create the action using Gio.SimpleAction.new and connect it with the function and setup the accel if needed.
+Let's walk through the code which got added. from line 17-22. We are defining an array of actions we want to define. It will have a name, a function to execute and a optional accel. and later from line 24-36, we just create the action using `Gio.SimpleAction.new` and connect it with the function and setup the accel if needed.
 
-From Line 39-45, we are getting a new Gtk.Builder instance from resource , getting the dialog and showing it. 
+From Line 39-45, we are getting a new `Gtk.Builder` instance from resource , getting the dialog and showing it. 
 
-The next step is to make the menu button on the header bar functional. The menu button on press should come up with a popover menu. Which currently will have one option. About. On click should show the about dialog. GIO also gives us the convenience of creating a menu model based on actions. You can find the documentation for that [here](https://developer.gnome.org/gio/2.64/GMenuModel.html). 
+The next step is to make the menu button on the header bar functional. The menu button on press should come up with a popover menu. Which currently will have one option. `About`. On click should show the about dialog. GIO also gives us the convenience of creating a menu model based on actions. You can find the documentation for that [here](https://developer.gnome.org/gio/2.64/GMenuModel.html). 
 
 ```python
 # src/window.py
@@ -152,7 +152,7 @@ class SplashWindow(Gtk.ApplicationWindow):
         self.shuffle_button.connect("clicked", self.shuffle_button_on_clicked)
 ```
 
-There are some very small additions here. First up at Line 16,  we also get the open\_menu\_button which is of type Gtk.MenuButton. And we have a helper function called set\_menu\_items which creates an instance of Gio.Menu, adds one menu item labeled About which inturn calls the app.about action. Also in Line 50, we call the set\_menu items function in the \_\_init\_\_ method.
+There are some very small additions here. First up at Line 16,  we also get the `open_menu_button` which is of type `Gtk.MenuButton`. And we have a helper function called `set_menu_items` which creates an instance of `Gio.Menu`, adds one menu item labeled About which inturn calls the `app.about` action. Also in Line 50, we call the set\_menu items function in the `__init__` method.
 
 Run the application to test it now.
 
