@@ -64,7 +64,7 @@ class WallPaperService:
     background_settings = Gio.Settings.new("org.gnome.desktop.background")
 
     def set_wallpaper_from_file_uri(self, file_uri: str):
-        self.background_settings.set('picture-uri', f"file:///{file_uri}")
+        self.background_settings['picture-uri'] = f"file:///{file_uri}"
 
     def write_image_url_to_wallpaper_file(self, image_url: str):
         response = requests.get(image_url, stream=True)

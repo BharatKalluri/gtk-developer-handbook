@@ -8,4 +8,5 @@
 * [The Build System](writing-apps-using-python/the-build-system.md)
 * [Understanding Widgets, Layouts & Templates](writing-apps-using-python/understanding-widgets-layouts-and-templates.md)
 * [Working with GIO: GSettings](writing-apps-using-python/working-with-gio-gsettings.md)
+* [Working with Widgets](writing-apps-using-python/working-with-widgets.md)
 
