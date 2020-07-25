@@ -123,7 +123,7 @@ Again, a very similar piece of code to the desktop file validator. If the execut
 
 #### GSchema file \(Line 32-34\)
 
-`.gschema.xml` file is responsible for managing GSettings for your application. [GSettings](https://developer.gnome.org/GSettings/) are the settings you can define for your application. This is useful for persistant state and settings. For example, an application's window size and position can be stored in GSettings and retrieved whenever a new window is opened.
+`.gschema.xml` file is responsible for managing GSettings for your application. [GSettings](https://developer.gnome.org/GSettings/) are the settings you can define for your application. This is useful for persistent state and settings. For example, an application's window size and position can be stored in GSettings and retrieved whenever a new window is opened.
 
 This file is installed in `/usr/share/glib-2.0/schemas`
 
