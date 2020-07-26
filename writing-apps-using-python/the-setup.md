@@ -8,6 +8,15 @@ description: Let's get started!
 
 * Install `git`
 * Sign up on a git hosting provider \([Github](https://github.com/)/[GitLab](https://gitlab.com/)/[GNOME's GitLab instance](https://gitlab.gnome.org/)\)
+
+### Installing GNOME Builder
+
+#### Install Builder using your distributions package manager
+
+* Most of the distributions have Builder in their default repositories. You can directly install builder using your trusty package manager.
+
+#### \(or\) Install Builder using Flatpak
+
 * Install [Flatpak](https://www.flatpak.org/) \(Flatpak is a package/application manager\) , instructions to install flatpak on your distribution can be found [here](https://flatpak.org/setup/)
 * Setup [flathub](https://flathub.org/) by issuing this command in the terminal
 
