@@ -9,7 +9,7 @@ description: Let's get started!
 * Install `git`
 * Sign up on a git hosting provider \([Github](https://github.com/)/[GitLab](https://gitlab.com/)/[GNOME's GitLab instance](https://gitlab.gnome.org/)\)
 
-### Installing GNOME Builder
+### Installing [GNOME Builder](https://wiki.gnome.org/Apps/Builder)
 
 #### Install Builder using your distributions package manager
 
