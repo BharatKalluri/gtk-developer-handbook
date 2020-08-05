@@ -50,16 +50,17 @@ Create a folder called `services`and create a file called `wallpaper_service.py`
 ```python
 import os
 from pathlib import Path
-from gi.repository import Gio
+from gi.repository import Gio, GLib
 
 import requests
 
 
 class WallPaperService:
-    splash_wallpaper_file_path = os.path.join(
-        Path.home(),
-        "Pictures",
-        "splash_wallpaper.jpg"
+    cache_dir = GLib.get_user_cache_dir()
+    pictures_dir = GLib.get_user_special_dir(GLib.USER_DIRECTORY_PICTURES)
+    splash_wallpaper_folder_path = os.path.join(
+        cache_dir,
+        "in.bharatkalluri.splash"
     )
     background_settings = Gio.Settings.new("org.gnome.desktop.background")
 
@@ -79,6 +80,8 @@ class WallPaperService:
 ```
 
 Let us walk through the code, the class has a class variable called `splash_wallpaper_file_path` which is a constant path at which we will be saving the wallpaper. Another class variable called `background_settings` which holds GSettings for the schema which we got from exploring DConf \(`org.gnome.desktop.background`\).
+
+One interesting thing to note is that, cache dir and pictures dir are not hardcoded as `~/.cache` and `~/Pictures` . GLib provides a [bunch of utility functions](https://lazka.github.io/pgi-docs/index.html#GLib-2.0/functions.html#GLib.get_user_special_dir) which can point us to the right path. Why don't we hardcode? To understand that, think in terms of a person who is using his system in japanese. He/She would not have a `~/Pictures` folder at all. It will be named something else. This abstraction makes sure that apps don't break in such scenario.
 
 The `set_wallpaper_from_file_uri` just takes in a URI and set's the GSetting accordingly. `set_wallpaper_from_file_uri` downloads an image from the URL and saves in a given path. The final function `set_wallpaper_from_url` combines both these functions, it takes in a `image_url`, downloads the file and places it in the desired file path and then changes the GSetting. Great!
 
